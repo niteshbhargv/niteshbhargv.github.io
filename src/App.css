@@ -234,101 +234,86 @@ section {
 /* Experience Section */
 .experience-timeline {
   position: relative;
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .experience-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: #e2e8f0;
-  transform: translateX(-50%);
+  display: none;
 }
 
 .timeline-item {
-  position: relative;
-  margin-bottom: 50px;
-  width: 45%;
-}
-
-.timeline-item:nth-child(odd) {
-  left: 0;
-}
-
-.timeline-item:nth-child(even) {
-  left: 55%;
-}
-
-.timeline-content {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   position: relative;
+  transition: transform 0.3s ease;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  top: 30px;
-  width: 20px;
-  height: 20px;
-  background: #667eea;
-  border-radius: 50%;
-  z-index: 2;
+.timeline-item:hover {
+  transform: translateY(-5px);
 }
 
-.timeline-item:nth-child(odd)::before {
-  right: -60px;
-}
-
-.timeline-item:nth-child(even)::before {
-  left: -60px;
+.timeline-content {
+  position: relative;
+  padding: 0;
 }
 
 .company {
   color: #667eea;
+  font-size: 1.3rem;
   font-weight: 600;
-  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
 .role {
   font-size: 1.1rem;
-  font-weight: 600;
-  margin: 5px 0;
   color: #2d3748;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .duration {
-  color: #718096;
   font-size: 0.9rem;
+  color: #718096;
   margin-bottom: 15px;
 }
 
 .achievements {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
 .achievements li {
-  margin-bottom: 10px;
-  padding-left: 20px;
   position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
   color: #4a5568;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .achievements li::before {
-  content: '▸';
+  content: '•';
   position: absolute;
   left: 0;
   color: #667eea;
-  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .experience-timeline {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
 }
 
 /* Education Section */
