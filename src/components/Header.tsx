@@ -21,7 +21,7 @@ const Header: React.FC = () => {
             </div>
             <div className="contact-item">
               <i className="fab fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/nitesh-bhargava-643721a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nitesh-bhargava-6437211a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div className="contact-item">
               <i className="fab fa-github"></i>
