@@ -3,7 +3,7 @@ import React from 'react';
 const About: React.FC = () => {
   return (
     <section id="about">
-      <div className="container">
+      <div className="section-content">
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-text fade-in">

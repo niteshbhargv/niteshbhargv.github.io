@@ -25,7 +25,7 @@ const Education: React.FC = () => {
 
   return (
     <section id="education">
-      <div className="container">
+      <div className="section-content">
         <h2 className="section-title">Education</h2>
         <div className="education-grid">
           {educationItems.map((education, index) => (

@@ -63,7 +63,7 @@ const Experience: React.FC = () => {
 
   return (
     <section id="experience">
-      <div className="container">
+      <div className="section-content">
         <h2 className="section-title">Professional Experience</h2>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (

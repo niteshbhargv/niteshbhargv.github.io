@@ -88,13 +88,17 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Header />
-      <Navigation />
-      <About />
-      <Experience />
-      <Education />
-      <Footer />
+    <div className="app-container">
+      <div className="app-content">
+        <Header />
+        <Navigation />
+        <main className="main-content">
+          <About />
+          <Experience />
+          <Education />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };

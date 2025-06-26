@@ -3,7 +3,7 @@ import React from 'react';
 const Header: React.FC = () => {
   return (
     <header>
-      <div className="container">
+      <div className="section-content">
         <div className="header-content">
           <div className="profile-img">
             <i className="fas fa-user"></i>

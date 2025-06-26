@@ -3,7 +3,7 @@ import React from 'react';
 const Navigation: React.FC = () => {
   return (
     <nav>
-      <div className="container">
+      <div className="section-content">
         <div className="nav-container">
           <ul className="nav-links">
             <li><a href="#about">About</a></li>
