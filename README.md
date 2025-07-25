@@ -1,1 +1,1 @@
-readme
+npm run dev
