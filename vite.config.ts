@@ -8,11 +8,11 @@ export default defineConfig({
   server: {
     middlewareMode: false,
     fs: {
-      strict: true,
+      strict: false,
     },
   },
   build: {
-    modulePreload: true,
+    modulePreload: false,
     target: 'esnext',
     minify: 'esbuild',
     rollupOptions: {
