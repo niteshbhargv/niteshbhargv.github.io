@@ -27,6 +27,10 @@ const Header: React.FC = () => {
               <i className="fab fa-github"></i>
               <a href="https://github.com/niteshbhargv" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
+            <div className="contact-item">
+              <i className="fas fa-download"></i>
+              <a href="./Resume_Nitesh_Bhargava.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
           </div>
         </div>
       </div>
