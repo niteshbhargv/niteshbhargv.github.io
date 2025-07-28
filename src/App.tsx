@@ -6,6 +6,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import Skills from './components/Skills';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -44,8 +45,8 @@ const App: React.FC = () => {
       });
     }, observerOptions);
 
-    // Observe all timeline items and education cards
-    const animatedElements = document.querySelectorAll('.timeline-item, .education-card, .about-text, .skills-grid');
+    // Observe all experience panels, education cards, and skill categories
+    const animatedElements = document.querySelectorAll('.experience-panel, .education-card, .about-text, .skills-grid, .detail-item');
     animatedElements.forEach(el => {
       observer.observe(el);
     });
@@ -96,6 +97,7 @@ const App: React.FC = () => {
           <About />
           <Experience />
           <Education />
+          <Skills />
         </main>
         <Footer />
       </div>

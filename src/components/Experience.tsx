@@ -14,6 +14,7 @@ const Experience: React.FC = () => {
       role: "Software Development Engineer - IV",
       duration: "July 2021 - Present",
       achievements: [
+        "Built and scaled CPGenAI, an AI-driven microservice that generates multimodal content (text, images,videos) for Adobe Captivate.",
         "Leading the migration of Adobe Captivate from desktop-only to cloud, focusing on infrastructure, system design, and automation using Argo CI/CD deployment",
         "Implemented \"Share for Review\" feature using Node.js and DCX-js, enhancing collaborative capabilities and user feedback processes",
         "Owner of publishing module for AEM Guides plugin in Adobe Experience Manager, providing end-to-end enterprise CCMS for DITA-based content",
@@ -65,13 +66,15 @@ const Experience: React.FC = () => {
     <section id="experience">
       <div className="section-content">
         <h2 className="section-title">Professional Experience</h2>
-        <div className="experience-timeline">
+        <div className="experience-panels">
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item fade-in">
-              <div className="timeline-content">
+            <div key={index} className="experience-panel fade-in">
+              <div className="panel-header">
                 <div className="company">{exp.company}</div>
-                <div className="role">{exp.role}</div>
                 <div className="duration">{exp.duration}</div>
+              </div>
+              <div className="panel-content">
+                <div className="role">{exp.role}</div>
                 <ul className="achievements">
                   {exp.achievements.map((achievement, achievementIndex) => (
                     <li key={achievementIndex}>{achievement}</li>

@@ -4,7 +4,6 @@ interface EducationItem {
   degree: string;
   school: string;
   year: string;
-  gpa: string;
 }
 
 const Education: React.FC = () => {
@@ -12,14 +11,12 @@ const Education: React.FC = () => {
     {
       degree: "M.Tech in Computer Science and Engineering",
       school: "Indian Institute of Technology, Madras",
-      year: "2012 - 2014",
-      gpa: "CGPA: 8.13"
+      year: "2012 - 2014"
     },
     {
       degree: "B.Tech in Information and Communication Technology",
       school: "Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar",
-      year: "2008 - 2012",
-      gpa: "CGPA: 6.74"
+      year: "2008 - 2012"
     }
   ];
 
@@ -33,7 +30,6 @@ const Education: React.FC = () => {
               <div className="degree">{education.degree}</div>
               <div className="school">{education.school}</div>
               <div className="year">{education.year}</div>
-              <div className="gpa">{education.gpa}</div>
             </div>
           ))}
         </div>

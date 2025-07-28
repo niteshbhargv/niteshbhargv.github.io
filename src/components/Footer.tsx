@@ -14,11 +14,11 @@ const Footer: React.FC = () => {
           <a href="https://github.com/niteshbhargv" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <i className="fab fa-github"></i>
           </a>
-          <a href="./Resume_Nitesh_Bhargava.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
+          <a href="./Nitesh_Bhargava_cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
             <i className="fas fa-download"></i>
           </a>
         </div>
-        <p>&copy; 2024 Nitesh Bhargava. All rights reserved.</p>
+        <p>&copy; 2025 Nitesh Bhargava. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             </div>
             <div className="contact-item">
               <i className="fas fa-download"></i>
-              <a href="./Resume_Nitesh_Bhargava.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a href="./Nitesh_Bhargava_cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
           </div>
         </div>
