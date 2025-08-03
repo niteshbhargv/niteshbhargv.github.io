@@ -16,15 +16,6 @@ const Posts: React.FC = () => {
   
   const posts: Post[] = [
     {
-      id: 1,
-      title: "Building Scalable Microservices with AI Integration",
-      date: "December 15, 2023",
-      excerpt: "Exploring how we built CPGenAI at Adobe - a microservice that generates multimodal content using advanced AI techniques. Learn about the architecture decisions, scalability challenges, and integration patterns.",
-      readTime: "8 min read",
-      tags: ["AI", "Microservices", "Node.js", "Architecture"],
-      link: "/blog/building-scalable-microservices-ai-integration"
-    },
-    {
       id: 2,
       title: "Migrating Desktop Applications to Cloud: Lessons Learned",
       date: "November 22, 2023",
