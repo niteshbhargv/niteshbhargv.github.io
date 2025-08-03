@@ -7,7 +7,7 @@ const BlogPost6: React.FC = () => {
         <header className="blog-post-header">
           <h1 className="blog-post-title">Event-Driven Architecture: Automating Slot Assignment</h1>
           <div className="blog-post-meta">
-            <span className="blog-post-date">July 30, 2023</span>
+            <span className="blog-post-date">July 30, 2024</span>
             <span className="blog-post-read-time">9 min read</span>
           </div>
           <div className="blog-post-tags">

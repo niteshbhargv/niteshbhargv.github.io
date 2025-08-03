@@ -18,7 +18,7 @@ const Posts: React.FC = () => {
     {
       id: 2,
       title: "Migrating Desktop Applications to Cloud: Lessons Learned",
-      date: "November 22, 2023",
+      date: "November 22, 2024",
       excerpt: "A deep dive into the challenges and solutions when migrating Adobe Captivate from desktop-only to cloud. Infrastructure decisions, system design principles, and automation strategies.",
       readTime: "12 min read",
       tags: ["Cloud Migration", "DevOps", "CI/CD", "System Design"],
@@ -27,7 +27,7 @@ const Posts: React.FC = () => {
     {
       id: 3,
       title: "QR Code-Based Inventory Management: A Case Study",
-      date: "October 10, 2023",
+      date: "October 10, 2024",
       excerpt: "How we revolutionized inventory tracking at Ninjacart using QR code Stack GRN system. From concept to implementation, covering the technical challenges and business impact.",
       readTime: "6 min read",
       tags: ["Inventory Management", "QR Codes", "Backend", "Optimization"],
@@ -36,7 +36,7 @@ const Posts: React.FC = () => {
     {
       id: 4,
       title: "Performance Testing at Scale: Building vcbench for vCenter",
-      date: "September 18, 2023",
+      date: "September 18, 2024",
       excerpt: "Creating performance testing tools for enterprise applications. The story behind vcbench and Hawkeye - VMware's first end-to-end performance suite appliance.",
       readTime: "10 min read",
       tags: ["Performance Testing", "VMware", "Scalability", "Enterprise"],
@@ -45,7 +45,7 @@ const Posts: React.FC = () => {
     {
       id: 5,
       title: "Graph Processing Optimization: GSoC Experience with Gephi",
-      date: "August 25, 2023",
+      date: "August 25, 2024",
       excerpt: "My Google Summer of Code experience working on GraphStore benchmark and tuning. Lessons learned in open source contribution and graph processing optimization.",
       readTime: "7 min read",
       tags: ["Open Source", "Graph Processing", "Performance", "GSoC"],
@@ -54,7 +54,7 @@ const Posts: React.FC = () => {
     {
       id: 6,
       title: "Event-Driven Architecture: Automating Slot Assignment",
-      date: "July 30, 2023",
+      date: "July 30, 2024",
       excerpt: "Implementing fair allocation algorithms with event handlers to automate executive slot assignments. Reducing latency and improving system efficiency through smart architecture.",
       readTime: "9 min read",
       tags: ["Event-Driven", "Algorithms", "Automation", "Architecture"],

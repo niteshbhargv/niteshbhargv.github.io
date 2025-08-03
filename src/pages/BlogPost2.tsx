@@ -7,7 +7,7 @@ const BlogPost2: React.FC = () => {
         <header className="blog-post-header">
           <h1 className="blog-post-title">Migrating Desktop Applications to Cloud: Lessons Learned</h1>
           <div className="blog-post-meta">
-            <span className="blog-post-date">November 22, 2023</span>
+            <span className="blog-post-date">November 22, 2024</span>
             <span className="blog-post-read-time">12 min read</span>
           </div>
           <div className="blog-post-tags">

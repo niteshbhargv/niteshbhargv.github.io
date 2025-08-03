@@ -7,7 +7,7 @@ const BlogPost5: React.FC = () => {
         <header className="blog-post-header">
           <h1 className="blog-post-title">Graph Processing Optimization: GSoC Experience with Gephi</h1>
           <div className="blog-post-meta">
-            <span className="blog-post-date">August 25, 2023</span>
+            <span className="blog-post-date">August 25, 2024</span>
             <span className="blog-post-read-time">7 min read</span>
           </div>
           <div className="blog-post-tags">
