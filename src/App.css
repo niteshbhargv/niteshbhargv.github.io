@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #f8fafc;
+  background: #f4f1eb;
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
@@ -24,7 +24,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -148,8 +148,8 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #c17854;
+  border-bottom-color: #c17854;
 }
 
 /* Sections */
@@ -171,7 +171,7 @@ section {
   content: '';
   width: 60px;
   height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -203,9 +203,9 @@ section {
 .about-intro {
   margin-bottom: 50px;
   padding: 30px;
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  background: linear-gradient(135deg, #f4f1eb 0%, #e8e3d8 100%);
   border-radius: 16px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #c17854;
 }
 
 .about-intro p {
@@ -227,11 +227,11 @@ section {
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   text-align: left;
-  border-top: 3px solid #667eea;
+  border-top: 3px solid #c17854;
 }
 
 .detail-item h4 {
-  color: #667eea;
+  color: #c17854;
   font-size: 1.1rem;
   margin-bottom: 12px;
   font-weight: 600;
@@ -292,7 +292,7 @@ section {
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   color: white;
   padding: 8px 16px;
   border-radius: 25px;
@@ -324,7 +324,7 @@ section {
 }
 
 .panel-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   color: white;
   padding: 24px 30px;
   display: flex;
@@ -381,7 +381,7 @@ section {
   content: '▸';
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #c17854;
   font-weight: bold;
 }
 
@@ -413,7 +413,7 @@ section {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
 }
 
 .degree {
@@ -424,7 +424,7 @@ section {
 }
 
 .school {
-  color: #667eea;
+  color: #c17854;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -435,7 +435,7 @@ section {
 }
 
 .gpa {
-  background: #f7fafc;
+  background: #f4f1eb;
   padding: 10px 20px;
   border-radius: 20px;
   display: inline-block;
@@ -465,7 +465,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #c17854;
 }
 
 /* Mobile Responsiveness */
@@ -728,12 +728,12 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 }
 
 .post-date {
-  color: #667eea;
+  color: #c17854;
   font-weight: 500;
 }
 
 .post-read-time {
-  background: #f7fafc;
+  background: #f4f1eb;
   padding: 4px 12px;
   border-radius: 12px;
   color: #4a5568;
@@ -758,7 +758,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 }
 
 .post-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   color: white;
   padding: 4px 12px;
   border-radius: 12px;
@@ -772,7 +772,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 }
 
 .read-more {
-  color: #667eea;
+  color: #c17854;
   font-weight: 500;
   font-size: 0.9rem;
   display: inline-flex;
@@ -781,7 +781,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 }
 
 .post-card:hover .read-more {
-  color: #764ba2;
+  color: #8b4513;
 }
 
 /* Mobile Responsiveness for Posts */
@@ -834,7 +834,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 }
 
 .blog-post-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
   color: white;
   padding: 40px;
   text-align: center;
@@ -895,8 +895,8 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
   font-weight: 500;
   margin-bottom: 30px;
   padding: 20px;
-  background: #f7fafc;
-  border-left: 4px solid #667eea;
+  background: #f4f1eb;
+  border-left: 4px solid #c17854;
   border-radius: 8px;
 }
 
@@ -938,7 +938,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
   content: '▸';
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #c17854;
   font-weight: bold;
 }
 
@@ -949,7 +949,7 @@ p, h1, h2, h3, h4, .degree, .school, .role, .company {
 
 /* Back Button Styling */
 .back-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%) !important;
   color: white !important;
   padding: 8px 16px !important;
   border-radius: 20px !important;

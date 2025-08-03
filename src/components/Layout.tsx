@@ -17,13 +17,23 @@ const Layout: React.FC<LayoutProps> = ({ children, showBackButton = false }) => 
           <div className="section-content">
             <div className="nav-container">
               <ul className="nav-links">
-                <li><Link to="/#about">About</Link></li>
-                <li><Link to="/#experience">Experience</Link></li>
-                <li><Link to="/#education">Education</Link></li>
-                <li><Link to="/#skills">Skills</Link></li>
-                <li><Link to="/#posts">Posts</Link></li>
-                {showBackButton && (
-                  <li><Link to="/" className="back-button">← Back to Portfolio</Link></li>
+                {showBackButton ? (
+                  <>
+                    <li><Link to="/#about">About</Link></li>
+                    <li><Link to="/#experience">Experience</Link></li>
+                    <li><Link to="/#education">Education</Link></li>
+                    <li><Link to="/#skills">Skills</Link></li>
+                    <li><Link to="/#posts">Posts</Link></li>
+                    <li><Link to="/" className="back-button">← Back to Portfolio</Link></li>
+                  </>
+                ) : (
+                  <>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#posts">Posts</a></li>
+                  </>
                 )}
               </ul>
             </div>
