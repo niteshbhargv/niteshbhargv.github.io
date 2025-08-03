@@ -1,107 +1,56 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-import About from './components/About';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Footer from './components/Footer';
-import Skills from './components/Skills';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import BlogPost1 from './pages/BlogPost1';
+import BlogPost2 from './pages/BlogPost2';
+import BlogPost3 from './pages/BlogPost3';
+import BlogPost4 from './pages/BlogPost4';
+import BlogPost5 from './pages/BlogPost5';
+import BlogPost6 from './pages/BlogPost6';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    // Smooth scrolling for navigation links
-    const handleSmoothScroll = (e: Event) => {
-      e.preventDefault();
-      const target = e.target as HTMLAnchorElement;
-      const href = target.getAttribute('href');
-      if (href?.startsWith('#')) {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(link => {
-      link.addEventListener('click', handleSmoothScroll);
-    });
-
-    // Fade in animation on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all experience panels, education cards, and skill categories
-    const animatedElements = document.querySelectorAll('.experience-panel, .education-card, .about-text, .skills-grid, .detail-item');
-    animatedElements.forEach(el => {
-      observer.observe(el);
-    });
-
-    // Active navigation link highlighting
-    const handleNavHighlight = () => {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-links a');
-      
-      let current = '';
-      sections.forEach(section => {
-        const htmlSection = section as HTMLElement;
-        const sectionTop = htmlSection.offsetTop;
-        if (window.pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        if (href === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleNavHighlight);
-
-    // Cleanup
-    return () => {
-      navLinks.forEach(link => {
-        link.removeEventListener('click', handleSmoothScroll);
-      });
-      window.removeEventListener('scroll', handleNavHighlight);
-      animatedElements.forEach(el => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
-
   return (
-    <div className="app-container">
-      <div className="app-content">
-        <Header />
-        <Navigation />
-        <main className="main-content">
-          <About />
-          <Experience />
-          <Education />
-          <Skills />
-        </main>
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <Layout>
+            <Home />
+          </Layout>
+        } />
+        <Route path="/blog/building-scalable-microservices-ai-integration" element={
+          <Layout showBackButton={true}>
+            <BlogPost1 />
+          </Layout>
+        } />
+        <Route path="/blog/migrating-desktop-applications-cloud" element={
+          <Layout showBackButton={true}>
+            <BlogPost2 />
+          </Layout>
+        } />
+        <Route path="/blog/qr-code-inventory-management-case-study" element={
+          <Layout showBackButton={true}>
+            <BlogPost3 />
+          </Layout>
+        } />
+        <Route path="/blog/performance-testing-scale-vcbench-vcenter" element={
+          <Layout showBackButton={true}>
+            <BlogPost4 />
+          </Layout>
+        } />
+        <Route path="/blog/graph-processing-optimization-gsoc-gephi" element={
+          <Layout showBackButton={true}>
+            <BlogPost5 />
+          </Layout>
+        } />
+        <Route path="/blog/event-driven-architecture-automating-slot-assignment" element={
+          <Layout showBackButton={true}>
+            <BlogPost6 />
+          </Layout>
+        } />
+      </Routes>
+    </Router>
   );
 };
 
