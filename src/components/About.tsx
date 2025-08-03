@@ -9,7 +9,7 @@ const About: React.FC = () => {
           <div className="about-content">
             <div className="about-text fade-in">
               <div className="about-intro">
-                <p>I'm a seasoned <strong>Computer Scientist II at Adobe</strong> with over 9 years of experience in software development and system architecture.</p>
+                <p>I'm a <strong>Computer Scientist II at Adobe</strong> with over 9 years of experience in software development and system architecture.</p>
               </div>
               
               <div className="about-details">
