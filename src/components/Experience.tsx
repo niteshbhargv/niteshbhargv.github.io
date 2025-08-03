@@ -5,16 +5,18 @@ interface ExperienceItem {
   role: string;
   duration: string;
   achievements: string[];
+  logo?: string;
 }
 
 const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       company: "Adobe",
+      logo: "https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg",
       role: "Software Development Engineer - IV",
       duration: "July 2021 - Present",
       achievements: [
-        "Built and scaled CPGenAI, an AI-driven microservice that generates multimodal content (text, images,videos) for Adobe Captivate.",
+        "<b>CPGenAI:</b> Architected and scaled CPGenAI, an advanced AI-powered microservice that generates multimodal content—including text, images, and videos—for Adobe Captivate.",
         "Leading the migration of Adobe Captivate from desktop-only to cloud, focusing on infrastructure, system design, and automation using Argo CI/CD deployment",
         "Implemented \"Share for Review\" feature using Node.js and DCX-js, enhancing collaborative capabilities and user feedback processes",
         "Owner of publishing module for AEM Guides plugin in Adobe Experience Manager, providing end-to-end enterprise CCMS for DITA-based content",
@@ -34,6 +36,7 @@ const Experience: React.FC = () => {
     {
       company: "Bankbazaar",
       role: "Software Development Engineer",
+      logo: "https://www.bankbazaar.com/images/bankbazaar-logo.svg",
       duration: "November 2017 - December 2019",
       achievements: [
         "Enabled automated calls with ClearTouch integration using cron jobs for lead filtration through IVR (Groovy)",
@@ -43,6 +46,7 @@ const Experience: React.FC = () => {
     },
     {
       company: "VMware",
+      logo: "https://www.vmware.com/vm-favicon.png",
       role: "Member of Technical Staff",
       duration: "August 2014 - September 2015",
       achievements: [
@@ -52,6 +56,7 @@ const Experience: React.FC = () => {
     },
     {
       company: "Google Inc.",
+      logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
       role: "Contract Developer",
       duration: "May 2013 - August 2013",
       achievements: [
@@ -70,14 +75,24 @@ const Experience: React.FC = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="experience-panel fade-in">
               <div className="panel-header">
-                <div className="company">{exp.company}</div>
+                <div className="company">
+                  {exp.logo && (
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.company} logo`} 
+                      className="company-logo"
+                      style={{height: '24px', marginRight: '8px', verticalAlign: 'middle'}}
+                    />
+                  )}
+                  {exp.company}
+                </div>
                 <div className="duration">{exp.duration}</div>
               </div>
               <div className="panel-content">
                 <div className="role">{exp.role}</div>
                 <ul className="achievements">
                   {exp.achievements.map((achievement, achievementIndex) => (
-                    <li key={achievementIndex}>{achievement}</li>
+                    <li key={achievementIndex} dangerouslySetInnerHTML={{__html: achievement}} />
                   ))}
                 </ul>
               </div>
