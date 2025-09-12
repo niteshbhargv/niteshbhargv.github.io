@@ -16,6 +16,15 @@ const Posts: React.FC = () => {
   
   const posts: Post[] = [
     {
+      id: 7,
+      title: "Building Real-Time Collaborative Editing with Y.js, WebSockets, and Tiptap: A Complete Architecture Guide",
+      date: "August 23, 2024",
+      excerpt: "Learn how to build a Google Docs-like collaborative editing experience using modern web technologies. Real-time collaborative editing has become an essential feature in modern web applications.",
+      readTime: "14 min read",
+      tags: ["JavaScript", "React", "Y.js", "WebSockets", "Tiptap", "CRDT", "Real-time", "Collaboration"],
+      link: "/blog/building-real-time-collaborative-editing-yjs-websockets-tiptap"
+    },
+    {
       id: 2,
       title: "Migrating Desktop Applications to Cloud: Lessons Learned",
       date: "November 22, 2024",

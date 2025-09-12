@@ -9,6 +9,7 @@ import BlogPost3 from './pages/BlogPost3';
 import BlogPost4 from './pages/BlogPost4';
 import BlogPost5 from './pages/BlogPost5';
 import BlogPost6 from './pages/BlogPost6';
+import BlogPost7 from './pages/BlogPost7';
 
 const App: React.FC = () => {
   return (
@@ -47,6 +48,11 @@ const App: React.FC = () => {
         <Route path="/blog/event-driven-architecture-automating-slot-assignment" element={
           <Layout showBackButton={true}>
             <BlogPost6 />
+          </Layout>
+        } />
+        <Route path="/blog/building-real-time-collaborative-editing-yjs-websockets-tiptap" element={
+          <Layout showBackButton={true}>
+            <BlogPost7 />
           </Layout>
         } />
       </Routes>
