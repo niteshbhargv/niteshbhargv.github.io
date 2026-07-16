@@ -1,100 +1,85 @@
-import React from 'react';
+---
+title: "Building Real-Time Collaborative Editing with Y.js, WebSockets, and Tiptap"
+date: 2025-08-23
+readTime: 14 min read
+tags: [Y.js, WebSockets, CRDT, Tiptap, React]
+draft: false
+---
+*Learn how to build a Google Docs-like collaborative editing experience using modern web technologies. Real-time collaborative editing has become an essential feature in modern web applications. Whether you're building a document editor, a note-taking app, or a content management system, users expect to see changes from other collaborators instantly.*
 
-const BlogPost7: React.FC = () => {
-  return (
-    <div className="blog-post-container">
-      <article className="blog-post">
-        <header className="blog-post-header">
-          <h1 className="blog-post-title">Building Real-Time Collaborative Editing with Y.js, WebSockets, and Tiptap: A Complete Architecture Guide</h1>
-          <div className="blog-post-meta">
-            <span className="blog-post-date">August 23, 2024</span>
-            <span className="blog-post-read-time">14 min read</span>
-          </div>
-          <div className="blog-post-tags">
-            {["JavaScript", "React", "Y.js", "WebSockets", "Tiptap", "CRDT", "Real-time", "Collaboration"].map((tag, index) => (
-              <span key={index} className="blog-post-tag">{tag}</span>
-            ))}
-          </div>
-        </header>
-        
-        <div className="blog-post-content">
-          <p className="blog-post-intro">
-            Learn how to build a Google Docs-like collaborative editing experience using modern web technologies. Real-time collaborative editing has become an essential feature in modern web applications. Whether you're building a document editor, a note-taking app, or a content management system, users expect to see changes from other collaborators instantly.
-          </p>
+## What We'll Build
 
-          <h2>What We'll Build</h2>
-          <p>By the end of this article, you'll have a complete understanding of:</p>
-          <ul>
-            <li><strong>Y.js</strong>: A powerful Conflict-free Replicated Data Type (CRDT) library for real-time collaboration</li>
-            <li><strong>WebSocket Server</strong>: A Node.js server that handles real-time synchronization</li>
-            <li><strong>Tiptap Editor</strong>: A modern rich-text editor built on ProseMirror with React integration</li>
-            <li><strong>User Awareness</strong>: Real-time cursor positions and participant management</li>
-          </ul>
+By the end of this article, you'll have a complete understanding of:
 
-          <h2>Architecture Overview</h2>
-          <p>Our collaborative editing system consists of three main components:</p>
+- **Y.js**: A powerful Conflict-free Replicated Data Type (CRDT) library for real-time collaboration
+- **WebSocket Server**: A Node.js server that handles real-time synchronization
+- **Tiptap Editor**: A modern rich-text editor built on ProseMirror with React integration
+- **User Awareness**: Real-time cursor positions and participant management
 
-          <h3>1. Y.js CRDT Layer</h3>
-          <ul>
-            <li>Handles conflict-free document synchronization</li>
-            <li>Manages operational transformations</li>
-            <li>Provides automatic conflict resolution</li>
-          </ul>
+## Architecture Overview
 
-          <h3>2. WebSocket Communication</h3>
-          <ul>
-            <li>Real-time bidirectional communication</li>
-            <li>Low-latency message delivery</li>
-            <li>Connection management and recovery</li>
-          </ul>
+Our collaborative editing system consists of three main components:
 
-          <h3>3. Rich Text Editor</h3>
-          <ul>
-            <li>Tiptap editor with collaboration extensions</li>
-            <li>User-friendly editing interface</li>
-            <li>Real-time cursor tracking</li>
-          </ul>
+### 1. Y.js CRDT Layer
 
-          <h2>Core Technologies</h2>
-          
-          <h3>Y.js: Conflict-Free Collaborative Editing</h3>
-          <p>
-            Y.js is a CRDT (Conflict-free Replicated Data Type) implementation that allows multiple users to edit the same document simultaneously without conflicts. It automatically merges changes and ensures all users see a consistent state.
-          </p>
-          
-          <h4>Key Benefits:</h4>
-          <ul>
-            <li><strong>Offline-first</strong>: Works without constant server connection</li>
-            <li><strong>Conflict Resolution</strong>: Automatically resolves editing conflicts</li>
-            <li><strong>Performance</strong>: Efficient delta synchronization</li>
-            <li><strong>Scalability</strong>: Handles thousands of concurrent users</li>
-          </ul>
+- Handles conflict-free document synchronization
+- Manages operational transformations
+- Provides automatic conflict resolution
 
-          <h3>WebSockets: Real-Time Communication</h3>
-          <p>
-            WebSockets provide full-duplex communication between the client and server, enabling instant synchronization of document changes and user awareness data.
-          </p>
+### 2. WebSocket Communication
 
-          <h3>Tiptap: Modern Rich Text Editor</h3>
-          <p>
-            Tiptap is a headless rich text editor built on ProseMirror, offering excellent integration with Y.js for collaborative editing.
-          </p>
+- Real-time bidirectional communication
+- Low-latency message delivery
+- Connection management and recovery
 
-          <h2>Step 1: Setting Up the Y.js WebSocket Server</h2>
-          <p>First, let's create our WebSocket server that will coordinate collaboration between clients.</p>
+### 3. Rich Text Editor
 
-          <h3>Server Dependencies</h3>
-          <pre><code>{`{
+- Tiptap editor with collaboration extensions
+- User-friendly editing interface
+- Real-time cursor tracking
+
+## Core Technologies
+
+### Y.js: Conflict-Free Collaborative Editing
+
+Y.js is a CRDT (Conflict-free Replicated Data Type) implementation that allows multiple users to edit the same document simultaneously without conflicts. It automatically merges changes and ensures all users see a consistent state.
+
+#### Key Benefits:
+
+- **Offline-first**: Works without constant server connection
+- **Conflict Resolution**: Automatically resolves editing conflicts
+- **Performance**: Efficient delta synchronization
+- **Scalability**: Handles thousands of concurrent users
+
+### WebSockets: Real-Time Communication
+
+WebSockets provide full-duplex communication between the client and server, enabling instant synchronization of document changes and user awareness data.
+
+### Tiptap: Modern Rich Text Editor
+
+Tiptap is a headless rich text editor built on ProseMirror, offering excellent integration with Y.js for collaborative editing.
+
+## Step 1: Setting Up the Y.js WebSocket Server
+
+First, let's create our WebSocket server that will coordinate collaboration between clients.
+
+### Server Dependencies
+
+```json
+{
   "dependencies": {
     "ws": "^8.18.3",
     "y-websocket": "^1.5.4",
     "yjs": "^13.6.27",
     "y-protocols": "^1.0.6"
   }
-}`}</code></pre>
+}
+```
 
-          <h3>WebSocket Server Implementation</h3>
-          <pre><code>{`const http = require('http')
+### WebSocket Server Implementation
+
+```javascript
+const http = require('http')
 const WebSocket = require('ws')
 const Y = require('yjs')
 const { setupWSConnection } = require('y-websocket/bin/utils')
@@ -208,28 +193,31 @@ server.on('request', (req, res) => {
 
 // Graceful shutdown
 process.on('SIGINT', () => {
-  console.log('\\n🛑 Shutting down server...')
+  console.log('\n🛑 Shutting down server...')
   wss.clients.forEach((ws) => ws.terminate())
   server.close(() => {
     console.log('✅ Server closed')
     process.exit(0)
   })
-})`}</code></pre>
+})
+```
 
-          <h4>Key Server Features:</h4>
-          <ul>
-            <li><strong>Document Isolation</strong>: Each document is identified by URL path</li>
-            <li><strong>Connection Management</strong>: Tracks active connections and handles cleanup</li>
-            <li><strong>Update Logging</strong>: Provides detailed logging of Y.js operations</li>
-            <li><strong>Health Monitoring</strong>: Built-in health check endpoint</li>
-            <li><strong>Graceful Shutdown</strong>: Proper cleanup on server termination</li>
-          </ul>
+#### Key Server Features:
 
-          <h2>Step 2: Building the React Client with Tiptap</h2>
-          <p>Now let's build the client-side application that connects to our Y.js server.</p>
+- **Document Isolation**: Each document is identified by URL path
+- **Connection Management**: Tracks active connections and handles cleanup
+- **Update Logging**: Provides detailed logging of Y.js operations
+- **Health Monitoring**: Built-in health check endpoint
+- **Graceful Shutdown**: Proper cleanup on server termination
 
-          <h3>Client Dependencies</h3>
-          <pre><code>{`{
+## Step 2: Building the React Client with Tiptap
+
+Now let's build the client-side application that connects to our Y.js server.
+
+### Client Dependencies
+
+```json
+{
   "dependencies": {
     "@tiptap/react": "^3.2.2",
     "@tiptap/starter-kit": "^3.2.2",
@@ -241,10 +229,13 @@ process.on('SIGINT', () => {
     "bootstrap": "^5.3.7",
     "axios": "^1.11.0"
   }
-}`}</code></pre>
+}
+```
 
-          <h3>Main Editor Component</h3>
-          <pre><code>{`import React, { useState, useEffect, useCallback, useRef } from 'react';
+### Main Editor Component
+
+```tsx
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { Container, Row, Col, Alert, Button } from 'react-bootstrap';
 import { WebsocketProvider } from 'y-websocket';
@@ -307,7 +298,7 @@ const TiptapEditor: React.FC = () => {
     const socketPort = process.env.REACT_APP_SOCKETSERVER_PORT || '8000';
 
     // Create WebSocket URL for Y.js
-    const wsUrl = \`ws://\${socketHost}:\${socketPort}\`;
+    const wsUrl = `ws://${socketHost}:${socketPort}`;
     console.log('🔗 Connecting Y.js WebSocket to:', wsUrl);
 
     // Create WebSocket provider
@@ -335,7 +326,7 @@ const TiptapEditor: React.FC = () => {
         const response = await axios.get('https://randomuser.me/api/');
         const user = response.data.results[0];
         const newUserData = {
-          displayname: \`\${user.name.first} \${user.name.last}\`,
+          displayname: `${user.name.first} ${user.name.last}`,
           displaycolor: getDisplayColor(provider.awareness.clientID.toString()),
           thumbnail: user.picture.thumbnail
         };
@@ -415,10 +406,10 @@ const TiptapEditor: React.FC = () => {
       // Set initial content only once when document is empty
       setTimeout(() => {
         if (editor.isEmpty && yDoc) {
-          editor.commands.setContent(\`
+          editor.commands.setContent(`
             <p>Welcome to the Tiptap React Editor with Y.js Collaboration!</p>
             <p>Start typing to test real-time collaborative editing.</p>
-          \`);
+          `);
         }
       }, 100);
     },
@@ -497,13 +488,17 @@ const TiptapEditor: React.FC = () => {
   );
 };
 
-export default TiptapEditor;`}</code></pre>
+export default TiptapEditor;
+```
 
-          <h2>Step 3: Implementing User Awareness and Cursors</h2>
-          <p>One of the most impressive features of collaborative editing is seeing where other users are working in real-time.</p>
+## Step 3: Implementing User Awareness and Cursors
 
-          <h3>Collaboration Cursors Component</h3>
-          <pre><code>{`import React, { useEffect, useState } from 'react';
+One of the most impressive features of collaborative editing is seeing where other users are working in real-time.
+
+### Collaboration Cursors Component
+
+```tsx
+import React, { useEffect, useState } from 'react';
 
 interface Participant {
   clientID: string;
@@ -629,38 +624,50 @@ const CollaborationCursors: React.FC<CollaborationCursorsProps> = ({
   );
 };
 
-export default CollaborationCursors;`}</code></pre>
+export default CollaborationCursors;
+```
 
-          <h3>CSS for Cursor Animation</h3>
-          <pre><code>{`@keyframes cursor-blink {
+### CSS for Cursor Animation
+
+```css
+@keyframes cursor-blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0.3; }
 }
 
 .collaboration-cursor {
   transition: all 0.1s ease-in-out;
-}`}</code></pre>
+}
+```
 
-          <h2>Understanding the Data Flow</h2>
-          <p>Let's trace how changes flow through our collaborative editing system:</p>
+## Understanding the Data Flow
 
-          <h3>1. User Types in Editor</h3>
-          <p>User Input → Tiptap Editor → ProseMirror Document → Y.js Document</p>
+Let's trace how changes flow through our collaborative editing system:
 
-          <h3>2. Y.js Synchronization</h3>
-          <p>Y.js Document → Y.js Update → WebSocket → Y.js Server → Other Clients</p>
+### 1. User Types in Editor
 
-          <h3>3. Remote Changes</h3>
-          <p>WebSocket Message → Y.js Document → ProseMirror Document → Tiptap Editor → UI Update</p>
+User Input → Tiptap Editor → ProseMirror Document → Y.js Document
 
-          <h3>4. Awareness Data Flow</h3>
-          <p>Cursor Position → Y.js Awareness → WebSocket → Other Clients → Cursor Visualization</p>
+### 2. Y.js Synchronization
 
-          <h2>Key Implementation Details</h2>
-          
-          <h3>Y.js Configuration</h3>
-          <p>Important: When using Y.js with Tiptap, exclude the History extension:</p>
-          <pre><code>{`// ❌ Don't include History extension
+Y.js Document → Y.js Update → WebSocket → Y.js Server → Other Clients
+
+### 3. Remote Changes
+
+WebSocket Message → Y.js Document → ProseMirror Document → Tiptap Editor → UI Update
+
+### 4. Awareness Data Flow
+
+Cursor Position → Y.js Awareness → WebSocket → Other Clients → Cursor Visualization
+
+## Key Implementation Details
+
+### Y.js Configuration
+
+Important: When using Y.js with Tiptap, exclude the History extension:
+
+```javascript
+// ❌ Don't include History extension
 import { History } from '@tiptap/extension-history'
 
 // ✅ Y.js handles history automatically
@@ -670,10 +677,13 @@ extensions: [
     document: yDoc,
   }),
   // Don't add History extension
-]`}</code></pre>
+]
+```
 
-          <h3>Connection Management</h3>
-          <pre><code>{`// Monitor connection status
+### Connection Management
+
+```javascript
+// Monitor connection status
 provider.on('status', ({ status }) => {
   setIsConnected(status === 'connected');
   setConnectionStatus(status);
@@ -684,20 +694,26 @@ provider.on('sync', (isSynced) => {
   if (isSynced) {
     setLoading(false);
   }
-});`}</code></pre>
+});
+```
 
-          <h2>Performance Optimizations</h2>
-          
-          <h3>1. Debounce Awareness Updates</h3>
-          <pre><code>{`const debouncedAwarenessUpdate = useMemo(
+## Performance Optimizations
+
+### 1. Debounce Awareness Updates
+
+```javascript
+const debouncedAwarenessUpdate = useMemo(
   () => debounce((cursor) => {
     provider.awareness.setLocalStateField('cursor', cursor);
   }, 50),
   [provider]
-);`}</code></pre>
+);
+```
 
-          <h3>2. Efficient Cursor Rendering</h3>
-          <pre><code>{`// Only update cursors when necessary
+### 2. Efficient Cursor Rendering
+
+```javascript
+// Only update cursors when necessary
 useEffect(() => {
   const updateCursors = () => {
     // Only process visible cursors
@@ -711,13 +727,17 @@ useEffect(() => {
 
   editor.on('selectionUpdate', throttledUpdate);
   return () => editor.off('selectionUpdate', throttledUpdate);
-}, [editor, participants]);`}</code></pre>
+}, [editor, participants]);
+```
 
-          <h2>Production Considerations</h2>
-          
-          <h3>1. Persistence</h3>
-          <p>Y.js documents exist only in memory by default. For production, implement persistence:</p>
-          <pre><code>{`const { LeveldbPersistence } = require('y-leveldb');
+## Production Considerations
+
+### 1. Persistence
+
+Y.js documents exist only in memory by default. For production, implement persistence:
+
+```javascript
+const { LeveldbPersistence } = require('y-leveldb');
 
 // Set up persistence
 const persistence = new LeveldbPersistence('./db');
@@ -729,10 +749,13 @@ wss.on('connection', (ws, req) => {
     persistence,
     docName,
   });
-});`}</code></pre>
+});
+```
 
-          <h3>2. Authentication & Authorization</h3>
-          <pre><code>{`wss.on('connection', (ws, req) => {
+### 2. Authentication & Authorization
+
+```javascript
+wss.on('connection', (ws, req) => {
   // Verify user authentication
   const token = req.headers.authorization;
   if (!verifyToken(token)) {
@@ -741,10 +764,13 @@ wss.on('connection', (ws, req) => {
   }
 
   setupWSConnection(ws, req);
-});`}</code></pre>
+});
+```
 
-          <h3>3. Rate Limiting</h3>
-          <pre><code>{`const rateLimit = new Map();
+### 3. Rate Limiting
+
+```javascript
+const rateLimit = new Map();
 
 wss.on('connection', (ws, req) => {
   const clientIP = req.connection.remoteAddress;
@@ -756,13 +782,17 @@ wss.on('connection', (ws, req) => {
   }
 
   setupWSConnection(ws, req);
-});`}</code></pre>
+});
+```
 
-          <h2>Troubleshooting Common Issues</h2>
-          
-          <h3>1. Connection Issues</h3>
-          <p>Problem: WebSocket connection fails</p>
-          <pre><code>{`// Solution: Add connection retry logic
+## Troubleshooting Common Issues
+
+### 1. Connection Issues
+
+Problem: WebSocket connection fails
+
+```javascript
+// Solution: Add connection retry logic
 const connectWithRetry = (maxRetries = 5) => {
   let retries = 0;
 
@@ -780,11 +810,15 @@ const connectWithRetry = (maxRetries = 5) => {
   };
 
   connect();
-};`}</code></pre>
+};
+```
 
-          <h3>2. Document Sync Issues</h3>
-          <p>Problem: Documents not syncing properly</p>
-          <pre><code>{`// Solution: Force sync after connection
+### 2. Document Sync Issues
+
+Problem: Documents not syncing properly
+
+```javascript
+// Solution: Force sync after connection
 provider.on('status', ({ status }) => {
   if (status === 'connected') {
     // Force document sync
@@ -792,12 +826,15 @@ provider.on('status', ({ status }) => {
       provider.sync();
     }, 100);
   }
-});`}</code></pre>
+});
+```
 
-          <h2>Deployment Guide</h2>
-          
-          <h3>1. Docker Setup</h3>
-          <pre><code>{`# Dockerfile for Y.js server
+## Deployment Guide
+
+### 1. Docker Setup
+
+```dockerfile
+# Dockerfile for Y.js server
 FROM node:18-alpine
 
 WORKDIR /app
@@ -808,10 +845,13 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 8000
-CMD ["node", "yjs-server.js"]`}</code></pre>
+CMD ["node", "yjs-server.js"]
+```
 
-          <h3>2. Nginx Configuration</h3>
-          <pre><code>{`upstream yjs_backend {
+### 2. Nginx Configuration
+
+```nginx
+upstream yjs_backend {
     server yjs-server:8000;
 }
 
@@ -834,46 +874,34 @@ server {
         proxy_read_timeout 86400;
         proxy_send_timeout 86400;
     }
-}`}</code></pre>
+}
+```
 
-          <h2>Conclusion</h2>
-          <p>
-            Building a real-time collaborative editing system with Y.js, WebSockets, and Tiptap provides a robust foundation for modern collaborative applications. The combination offers:
-          </p>
-          <ul>
-            <li>Conflict-free collaboration through Y.js CRDTs</li>
-            <li>Real-time synchronization via WebSockets</li>
-            <li>Rich editing experience with Tiptap</li>
-            <li>User awareness with cursor tracking</li>
-            <li>Scalable architecture for production use</li>
-          </ul>
+## Conclusion
 
-          <p>This implementation handles the core challenges of collaborative editing:</p>
-          <ul>
-            <li>Operational transformation for conflict resolution</li>
-            <li>Network partition tolerance with offline-first design</li>
-            <li>Real-time updates with minimal latency</li>
-            <li>User experience with visual collaboration cues</li>
-          </ul>
+Building a real-time collaborative editing system with Y.js, WebSockets, and Tiptap provides a robust foundation for modern collaborative applications. The combination offers:
 
-          <p>
-            The system is production-ready with proper error handling, connection management, and performance optimizations. You can extend it further with features like document persistence, user authentication, and advanced collaboration tools.
-          </p>
+- Conflict-free collaboration through Y.js CRDTs
+- Real-time synchronization via WebSockets
+- Rich editing experience with Tiptap
+- User awareness with cursor tracking
+- Scalable architecture for production use
 
-          <h2>Key Takeaways</h2>
-          <ul>
-            <li>Y.js CRDTs eliminate the complexity of manual conflict resolution</li>
-            <li>WebSocket connections provide the real-time communication layer</li>
-            <li>Tiptap's collaboration extensions integrate seamlessly with Y.js</li>
-            <li>User awareness creates an engaging collaborative experience</li>
-            <li>Proper architecture ensures scalability and maintainability</li>
-          </ul>
+This implementation handles the core challenges of collaborative editing:
 
-          <p>Ready to build your own collaborative editing application? Start with this foundation and customize it for your specific use case!</p>
-        </div>
-      </article>
-    </div>
-  );
-};
+- Operational transformation for conflict resolution
+- Network partition tolerance with offline-first design
+- Real-time updates with minimal latency
+- User experience with visual collaboration cues
 
-export default BlogPost7;
+The system is production-ready with proper error handling, connection management, and performance optimizations. You can extend it further with features like document persistence, user authentication, and advanced collaboration tools.
+
+## Key Takeaways
+
+- Y.js CRDTs eliminate the complexity of manual conflict resolution
+- WebSocket connections provide the real-time communication layer
+- Tiptap's collaboration extensions integrate seamlessly with Y.js
+- User awareness creates an engaging collaborative experience
+- Proper architecture ensures scalability and maintainability
+
+Ready to build your own collaborative editing application? Start with this foundation and customize it for your specific use case!

@@ -2,17 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nitesh Bhargava - Computer Scientist II at Adobe</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://esm.sh/react@18.3.1",
-          "react-dom": "https://esm.sh/react-dom@18.3.1"
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <title>Nitesh Bhargava — Software Engineer</title>
+    <meta
+      name="description"
+      content="Software engineer at Arista Networks. Previously Computer Scientist II at Adobe, working on Captivate's move to the cloud and CPGenAI."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://niteshbhargv.github.io/" />
+    <meta property="og:title" content="Nitesh Bhargava — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software engineer at Arista Networks. Previously Computer Scientist II at Adobe, working on Captivate's move to the cloud and CPGenAI."
+    />
+    <meta property="og:image" content="https://niteshbhargv.github.io/profileImage.jpeg" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Restores the deep link that 404.html stashed in the query string. -->
+    <script>
+      (function () {
+        var redirect = new URLSearchParams(window.location.search).get('p');
+        if (redirect) {
+          history.replaceState(null, '', redirect + window.location.hash);
         }
-      }
+      })();
     </script>
   </head>
   <body>
