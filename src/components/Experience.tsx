@@ -17,7 +17,12 @@ const experiences: ExperienceItem[] = [
     company: 'Arista Networks',
     role: 'Software Engineer',
     duration: 'November 2025 — Present',
-    achievements: [],
+    achievements: [
+      'Proposed resolving dataset status through the parent record instead of walking every member dataset. Archiving an organization had been asynchronous because it had to touch each child;',
+      'once the parent carries the status it is a single write, fast enough to run synchronously. The same model is what makes organization deletion atomic.',
+      'Migrating the device dataset store to a new schema: own the backfill job and its benchmarking, and the move of metadata reads and cleanup onto the new table.',
+      'Hardened the decommissioning workflow with audit logging, better error codes, and integration and smoke tests for decommission and recommission.',
+    ],
   },
   {
     company: 'Adobe',
@@ -34,9 +39,9 @@ const experiences: ExperienceItem[] = [
         synchronized multilingual narration.
       </>,
       <>
-        Led the design of Captivate's move from a desktop-only product to the cloud, which landed in
-        that same 13.0 release. Owned the infrastructure, system design, and Argo CI/CD automation
-        behind it.
+        Led the design of taking Captivate to the cloud — a product that had been desktop-only for
+        fifteen years — and shipped it in that same 13.0 release. Owned the infrastructure, system
+        design, and Argo CI/CD automation behind it.
       </>,
       'Implemented "Share for Review" using Node.js and DCX-js, improving collaboration and user feedback.',
       'Owned the publishing module of the AEM Guides plugin for two years — an end-to-end enterprise CCMS for DITA-based content.',
