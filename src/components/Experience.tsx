@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Adobe's own release notes. The CPGenAI and cloud claims below point at it so a
+// reader can check them rather than take them on faith.
+const CAPTIVATE_13_RELEASE =
+  'https://helpx.adobe.com/captivate/help/adobe-captivate--13-0-update--release-notes.html';
+
 interface ExperienceItem {
   company: string;
   role: string;
@@ -12,7 +17,12 @@ const experiences: ExperienceItem[] = [
     company: 'Arista Networks',
     role: 'Software Engineer',
     duration: 'November 2025 — Present',
-    achievements: [],
+    achievements: [
+      'Proposed resolving dataset status through the parent record instead of walking every member dataset. Archiving an organization had been asynchronous because it had to touch each child;',
+      'once the parent carries the status it is a single write, fast enough to run synchronously. The same model is what makes organization deletion atomic.',
+      'Migrating the device dataset store to a new schema: own the backfill job and its benchmarking, and the move of metadata reads and cleanup onto the new table.',
+      'Hardened the decommissioning workflow with audit logging, better error codes, and integration and smoke tests for decommission and recommission.',
+    ],
   },
   {
     company: 'Adobe',
@@ -20,12 +30,21 @@ const experiences: ExperienceItem[] = [
     duration: 'July 2021 — November 2025',
     achievements: [
       <>
-        <strong>CPGenAI:</strong> Architected and scaled an AI-powered microservice generating
-        multimodal content — text, images, and video — for Adobe Captivate.
+        <strong>CPGenAI:</strong> Tech lead for a team of four building the generative-AI service
+        behind{' '}
+        <a href={CAPTIVATE_13_RELEASE} target="_blank" rel="noopener noreferrer">
+          Adobe Captivate 13.0
+        </a>
+        , shipped November 2025 — course text, Firefly-powered images, and talking avatars with
+        synchronized multilingual narration.
       </>,
-      'Led the migration of Adobe Captivate from desktop-only to cloud, covering infrastructure, system design, and automation with Argo CI/CD.',
+      <>
+        Led the design of taking Captivate to the cloud — a product that had been desktop-only for
+        fifteen years — and shipped it in that same 13.0 release. Owned the infrastructure, system
+        design, and Argo CI/CD automation behind it.
+      </>,
       'Implemented "Share for Review" using Node.js and DCX-js, improving collaboration and user feedback.',
-      'Owned the publishing module for the AEM Guides plugin, providing an end-to-end enterprise CCMS for DITA-based content.',
+      'Owned the publishing module of the AEM Guides plugin for two years — an end-to-end enterprise CCMS for DITA-based content.',
       'Built the output generation flow on the OSGi framework, with single-click publishing to mobile-responsive web formats.',
     ],
   },
