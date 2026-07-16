@@ -1,53 +1,26 @@
 import React from 'react';
 
+const groups: { label: string; items: string }[] = [
+  { label: 'Backend', items: 'Java, Spring Boot, Node.js, Apache Sling, OSGi' },
+  { label: 'Frontend', items: 'React, JavaScript, TypeScript, DCX-js' },
+  { label: 'Infrastructure', items: 'AWS, Argo CI/CD, Docker' },
+  { label: 'Data', items: 'SQL, Elasticsearch, Prometheus' },
+];
+
 const Skills: React.FC = () => {
   return (
     <section id="skills">
-        <div className="section-content">
-          <h2 className="section-title">Technical Skills</h2>
-          <div className="skills-container">
-            <div className="skills-grid fade-in">
-              <div className="skill-category">
-                
-                <h4>Backend Technologies</h4>
-                <div className="skill-tags">
-                  <span className="skill-tag">Java</span>
-                  <span className="skill-tag">Spring Boot</span>
-                  <span className="skill-tag">Node.js</span>
-                  <span className="skill-tag">Apache Sling</span>
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Frontend Technologies</h4>
-                <div className="skill-tags">
-                  <span className="skill-tag">React.js</span>
-                  <span className="skill-tag">JavaScript</span>
-                  <span className="skill-tag">DCX-js</span>
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Cloud & DevOps</h4>
-                <div className="skill-tags">
-                  <span className="skill-tag">AWS</span>
-                  <span className="skill-tag">Argo CI/CD</span>
-                  <span className="skill-tag">OSGI</span>
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Data & Analytics</h4>
-                <div className="skill-tags">
-                  <span className="skill-tag">SQL</span>
-                  <span className="skill-tag">Elastic Search</span>
-                  <span className="skill-tag">Prometheus</span>
-                </div>
-              </div>
-            </div>
+      <h2 className="section-title">Tools</h2>
+      <dl className="skills">
+        {groups.map((group) => (
+          <div key={group.label} className="skill-row">
+            <dt>{group.label}</dt>
+            <dd>{group.items}</dd>
           </div>
-        </div>
-      </section>
+        ))}
+      </dl>
+    </section>
   );
 };
+
 export default Skills;

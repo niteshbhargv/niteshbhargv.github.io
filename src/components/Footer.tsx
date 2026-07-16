@@ -1,27 +1,32 @@
 import React from 'react';
+import { LINKS } from '../content/links';
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <div className="container">
-        <div className="footer-links">
-          <a href="mailto:nitesh.bhargv@gmail.com" aria-label="Email">
-            <i className="fas fa-envelope"></i>
+    <footer className="site-footer">
+      <ul className="contact">
+        <li>
+          <a href={`mailto:${LINKS.email}`}>Email</a>
+        </li>
+        <li>
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
           </a>
-          <a href="https://www.linkedin.com/in/nitesh-bhargava-643721a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i className="fab fa-linkedin"></i>
+        </li>
+        <li>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer">
+            GitHub
           </a>
-          <a href="https://github.com/niteshbhargv" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i className="fab fa-github"></i>
+        </li>
+        <li>
+          <a href={LINKS.resume} target="_blank" rel="noopener noreferrer">
+            Résumé
           </a>
-          <a href="./Nitesh_Bhargava_cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
-            <i className="fas fa-download"></i>
-          </a>
-        </div>
-        <p>&copy; 2025 Nitesh Bhargava. All rights reserved.</p>
-      </div>
+        </li>
+      </ul>
+      <p className="colophon">© {new Date().getFullYear()} Nitesh Bhargava</p>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

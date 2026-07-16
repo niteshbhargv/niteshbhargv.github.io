@@ -6,36 +6,36 @@ interface EducationItem {
   year: string;
 }
 
-const Education: React.FC = () => {
-  const educationItems: EducationItem[] = [
-    {
-      degree: "M.Tech in Computer Science and Engineering",
-      school: "Indian Institute of Technology, Madras",
-      year: "2012 - 2014"
-    },
-    {
-      degree: "B.Tech in Information and Communication Technology",
-      school: "Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar",
-      year: "2008 - 2012"
-    }
-  ];
+const educationItems: EducationItem[] = [
+  {
+    degree: 'M.Tech, Computer Science and Engineering',
+    school: 'Indian Institute of Technology, Madras',
+    year: '2012 — 2014',
+  },
+  {
+    degree: 'B.Tech, Information and Communication Technology',
+    school: 'DA-IICT, Gandhinagar',
+    year: '2008 — 2012',
+  },
+];
 
+const Education: React.FC = () => {
   return (
     <section id="education">
-      <div className="section-content">
-        <h2 className="section-title">Education</h2>
-        <div className="education-grid">
-          {educationItems.map((education, index) => (
-            <div key={index} className="education-card fade-in">
-              <div className="degree">{education.degree}</div>
-              <div className="school">{education.school}</div>
-              <div className="year">{education.year}</div>
+      <h2 className="section-title">Education</h2>
+      <ul className="cv">
+        {educationItems.map((item) => (
+          <li key={item.school} className="cv-entry">
+            <div className="cv-head">
+              <h3 className="cv-company">{item.school}</h3>
+              <span className="cv-duration">{item.year}</span>
             </div>
-          ))}
-        </div>
-      </div>
+            <p className="cv-role">{item.degree}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
 
-export default Education; 
+export default Education;

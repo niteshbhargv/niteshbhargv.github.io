@@ -1,41 +1,37 @@
 import React from 'react';
+import { LINKS } from '../content/links';
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <div className="section-content">
-        <div className="header-content">
-          <div className="profile-img">
-            <img src="/profileImage.jpeg" alt="Nitesh Bhargava" />
-          </div>
-          <h1>Nitesh Bhargava</h1>
-          <p className="subtitle">Computer Scientist II at Adobe</p>
-          <div className="contact-info">
-            <div className="contact-item">
-              <i className="fas fa-phone"></i>
-              <span>+91 77609 51188</span>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-envelope"></i>
-              <a href="mailto:nitesh.bhargv@gmail.com">nitesh.bhargv@gmail.com</a>
-            </div>
-            <div className="contact-item">
-              <i className="fab fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/nitesh-bhargava-6437211a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-            <div className="contact-item">
-              <i className="fab fa-github"></i>
-              <a href="https://github.com/niteshbhargv" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-download"></i>
-              <a href="./Nitesh_Bhargava_cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <header className="masthead">
+      <img className="portrait" src="/profileImage.jpeg" alt="" />
+      <h1 className="name">Nitesh Bhargava</h1>
+      <p className="tagline">
+        Software Engineer at Arista Networks
+        <span className="tagline-prev">Previously Computer Scientist II at Adobe</span>
+      </p>
+      <ul className="contact">
+        <li>
+          <a href={`mailto:${LINKS.email}`}>{LINKS.email}</a>
+        </li>
+        <li>
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href={LINKS.resume} target="_blank" rel="noopener noreferrer">
+            Résumé
+          </a>
+        </li>
+      </ul>
     </header>
   );
 };
 
-export default Header; 
+export default Header;
